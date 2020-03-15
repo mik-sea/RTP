@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
+    <script src="sweetalert/dist/sweetalert2.all.js"></script>
+    <script src="./src/js/all.js"></script>
+    <title>Question</title>
+    <style>
+        .green{
+            background-color:#078117;
+            border-radius: 7px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#tab").hide()
+            $("button#yes").click(function(){
+                $("#tab").show()
+                $("#showF").hide()
+            })
+            $("button#no").click(function(){
+                alert_info('Pisahkan sampah!','Ayo pisahkan sampahmu segera kamu akan diarahkan kedalam homepage dan kamu bisa liat klasifikasi dan teknik pengolahannya','index.html')
+            })
+            $("#plastik").click(()=>{
+                window.location.href = "map.html"
+            })
+            $("#kertas").click(()=>{
+                window.location.href = "map.html"
+            })
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <h4 class="green text-center text-white">Pisahkan dulu sampahmu ya!</h4>
+    </header>
+    <div class="container-fluid text-white">
+        <div id="showF">
+            <div class="row">
+                <div class="col-12 green text-center mt-5">
+                    <h5>Apakah kamu sudah memisahkan sampah yang akan dibuang nanti</h5>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-5 ml-auto">
+                    <button class="btn btn-success" id="yes">Sudah Dong!</button>
+                </div>
+                <div class="col-5 mr-auto">
+                    <button class="btn btn-success" id="no">Yahh,Belum!</button>
+                </div>
+            </div>
+        </div>
+        <div id="tab">
+            <div class="row">
+                <div class="col-12 green text-center mt-5">
+                    <h5>Jenis sampah apa yang ingin kamu buang</h5>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-5 ml-auto">
+                    <button class="btn btn-success" id="plastik">Sampah plastik</button>
+                </div>
+                <div class="col-5 mr-auto">
+                    <button class="btn btn-success" id="kertas">Sampah kertas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

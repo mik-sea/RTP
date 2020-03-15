@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello World">
+    <meta name="theme-color" content="black"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="assets/img/trash_green.png">
+    <meta name="apple-mobile-web-app-title" content="RTP">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="assets/img/gift.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./src/js/all.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="all.css">
+    <!-- <style>
+    .green{
+        background-color:#078117;
+        border-radius: 7px;
+    }
+    </style> -->
+    <script>
+        function tab_sampah(){
+            window.location.href="question_page.html"
+        }
+        function organik(){
+            alert("organik")
+        }
+        function anorganik(){
+            alert("anorganikk")
+        }
+        function b3(){
+            alert("b3")
+        }
+        $(document).ready(()=>{
+            // console.log(user)
+            $.ajax({
+                type:"GET",
+                url:"https://rtp-v1.glitch.me/list?email="+window.localStorage.getItem('email'),
+                success:(res)=>{
+                    if(res != null){
+                        $("#poin").append(res.poin)
+                        $("#name").append(res.username)
+                        $("#rtp").append(res.id)
+                        $("#email").append(res.email)
+                        $("#telp").append(res.telephone)
+                    }else{
+                        $("#pembuka").html(
+                            "<div class='col-12 radius_green p-2'>"+
+                            '<h5 style="width: 10rem" id="name">Selamat Datang</h5>'+
+                            "</div>"
+                        )
+                    }
+                },
+                error:()=>{
+                    console.log("error")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <!-- <nav class="navbar navbar-light green"> -->
+            <h1 class="radius_green text-center text-white">Rubbish To Point</h1>
+        <!-- </nav> -->
+    </header>
+    <div class="container-fluid text-white pb-5 mb-4">
+        <div id="pembuka">
+        <div class="row mt-2">
+            <div class="col-7 radius_green p-2">
+                <!-- <img class="col-4 p-0 align-middle" src="assets/img/avatar.jpg" alt="avatar" style="width: 50px; height: 50px; border-radius: 50%;"> -->
+                <!-- <div class="col-8 d-inline-block align-middle"> -->
+                    <h5 style="width: 10rem" id='name'>Nama : </h5><hr class="bg-white col-12 p-0">
+                    <h5 id='rtp'>ID : </h5>
+                <!-- </div> -->
+            </div>
+            <div class="col-4 text-center radius_green ml-auto">
+                <h5>point</h5>
+                <hr class="bg-white col-12 p-0">
+                <h6 id='poin'></h6>
+            </div>
+        </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 text-center">
+                <button class="radius_green w-100" style="height: 200px;" onclick="return tab_sampah()"><h2 class=" mx-auto text-white">Buang sampahmu sekarang !</h2></button>
+            </div>
+            <div class="row mt-3">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 radius_green">
+                <h5 class="text-center">Klasifikasi Sampah</h5>
+            </div>
+            <div class="col-4 pt-4">
+                <a href="organik.html">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_green.svg" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">Organik</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pt-4">
+                <a href="anor.html">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_yellow.svg" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">Anorganik</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 pt-4">
+                <a href="btiga.html">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_red.svg" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">B3</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom" style="background-color: black;">
+            <div class="row w-100 ml-auto">
+                <div class="col-4">
+                    <a href="prize-page.html"><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
+                </div>
+                <div class="col-4">
+                    <a href="index.html"><img src="./assets/img/home.svg" style="width: 50px; height: 50px;" alt="image"></a>
+                </div>
+                <div class="col-4">
+                    <a href="account-page.html"><img src="./assets/img/person.svg" style="width: 50px; height: 50px;" alt="image"></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="src/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

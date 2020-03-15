@@ -1,0 +1,41 @@
+{
+    "short_name": "RTP",
+    "name":"Rubbish To Point",
+    "orientation": "portrait-primary",
+    "icons":[
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        },
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        },
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        },
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        },
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        },
+        {
+            "src":"./assets/img/recycle-sign.svg",
+            "sizes":"400x400",
+            "type":"image/svg"
+        }
+    ],
+    "start_url":"index.html",
+    "display":"standalone",
+    "theme_color":"#000000",
+    "background_color":"#ffffff"
+}

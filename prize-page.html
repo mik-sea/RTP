@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
+    <script src="sweetalert/dist/sweetalert2.all.js"></script>
+    <script src="./src/js/all.js"></script>
+    <title>Prize Page</title>
+
+    <script>
+        $(document).ready(function(){
+            // $("#tab").hide()
+            // $("button#prize").click(function(){
+            //     $("#tab").show()
+            //     $("#showF").hide()
+            // })
+            $.ajax({
+                type:"GET",
+                url:"https://rtp-v1.glitch.me/list?email="+window.localStorage.getItem('email'),
+                success:(res)=>{
+                    if(res != null){
+                        $("#poin p").append(res.poin)
+                        // $("#name").append(res.username)
+                        // $("#rtp").append(res.id)
+                        // $("#email").append(res.email)
+                        // $("#telp").append(res.telephone)
+                    }
+                    else{
+                        $("#poin").hide()
+                    }
+                },
+                error:()=>{
+                    console.log("error")
+                }
+            })
+            $("button#prize").click(function(){
+                prize_info('Apa kamu yakin akan menukarkan point mu dengan ini ?', 'Pastikan pointmu cukup untuk menukarkan barang ini')
+            })
+            $("#plastik").click(()=>{
+                window.location.href = "map.html"
+            })
+            $("#kertas").click(()=>{
+                window.location.href = "map.html"
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <!--BAGIAN NAV-BAR TOP-->
+    <div class="green">
+        <h2 class="text-center">Prize</h2>
+    </div>
+
+    <div class="col-5 mt-5 green3" id='poin'>
+        <p>Point : </p> 
+    </div>
+    <!--BAGIAN CONTENT CARD NYA-->
+    <div class="container mt-3">
+        <div class="card text-center mx-auto mb-5 pb-1" style="width: 100%;">
+            <div class="card-body col-xs">
+            <div>
+                <img src="./assets/img/hydro-flask.svg" alt="..." width="100px">
+            </div>
+                <h5 class="card-title">Hydro Flask</h5>
+                <p class="card-title">Tukarkan agar tidak menggunakan botol plastik lagi !</p>
+                <p class="card-text" id="cash" value="10">10 Point</p>
+                <button class="btn btn-success" id="prize">Dapatkan</button>
+            </div>
+        </div>
+        <div class="card text-center mx-auto mb-5 pb-1" style="width: 100%;">
+            <div class="card-body">
+                <img src="./assets/img/reusable-mask.svg" class="card-img-top" width="100px">
+                <h5 class="card-title">Reusable Mask</h5>
+                <p class="card-text">Tukarkan agar tidak menggunakan masker sekali pakai !</p>
+                <p class="card-text">10 Point</p>
+                <button class="btn btn-success" id="prize">Dapatkan</button>
+            </div>
+        </div>
+        <div class="card text-center mx-auto mb-5 pb-1" style="width: 100%;">
+            <div class="card-body">
+                <img src="./assets/img/reusable-spoon-and-fork.svg" class="card-img-top">
+                <h5 class="card-title">Reusable Cutlery</h5>
+                <p class="card-text">Tukarkan agar tidak menggunakan alat makan plastik !.</p>
+                <p class="card-text">10 Point</p>
+                <button class="btn btn-success" id="prize">Dapatkan</button>
+            </div>
+        </div>
+        <div class="card text-center mx-auto mb-5 pb-1" style="width: 100%;">
+            <div class="card-body">
+                <img src="./assets/img/stainless-straw.svg" class="card-img-top" height="250px">
+                <h5 class="card-title">Reusable Stainless Straw</h5>
+                <p class="card-text">Tukarkan agar tidak menggunakan sedotan plastik !.</p>
+                <p class="card-text">10 Point</p>
+                <button class="btn btn-success" id="prize">Dapatkan</button>
+            </div>
+        </div>
+      </div>
+
+      <!--BAGIAN NAV-BAR BOTTOM-->
+      <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom">
+        <div class="row w-100 ml-auto">
+            <div class="col-4">
+                <a href="prize-page.html"><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
+            </div>
+            <div class="col-4">
+                <a href="index.html"><img src="./assets/img/home.svg" style="width: 50px; height: 50px;" alt="image"></a>
+            </div>
+            <div class="col-4">
+                <a href="account-page.html"><img src="./assets/img/person.svg" style="width: 50px; height: 50px;" alt="image"></a>
+            </div>
+        </div>
+    </nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

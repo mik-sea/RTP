@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="./src/js/jquery-new.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #marker {
+        background-image: url('./assets/img/recycle-sign.svg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .mapboxgl-popup {
+        max-width: 200px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="src/js/all.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARkF5n6q_4RTuzu14dbc11pCZZ2I1gWvQ&callback=initMap" async defer></script> -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWlrLXNlYSIsImEiOiJjazdyMW95M2owMDZhM2xucWFtYzcwcDNsIn0.9dq7O9jbbZmJs69KHcg_Aw';
+        var map = new mapboxgl.Map({
+            container:'map',
+            style:'mapbox://styles/mapbox/streets-v11',
+            center:[106.85,-6.21],
+            zoom:11
+        })
+        // $.getJSON("location.json",(data)=>{
+            var data = {
+                "fitur":[
+                    {
+                        "nama":"Bank Sampah Wijaya Kususma",
+                        "kordinat":[106.7981152,-6.2488016]
+                    },
+                    {
+                        "nama":"Bank Sampah Bersenyum",
+                        "kordinat":[106.8058267,-6.1922506]
+                    },
+                    {
+                        "nama":"bank sampah makmur RW.5",
+                        "kordinat":[106.797199,-6.262197]
+                    },
+                    {
+                        "nama":"Bank sampah Kirai Mandiri",
+                        "kordinat":[106.798556,-6.258941]
+                    },
+                    {
+                        "nama":"Bank sampah Saraswati",
+                        "kordinat":[106.806207,-6.263153]
+                    },
+                    {
+                        "nama":"Bank sampah SAHABAT",
+                        "kordinat":[106.795712,-6.263404]
+                    },
+                    {
+                        "nama":"Bank sampah Induk Gesit",
+                        "kordinat":[106.838394,-6.222236]
+                    },
+                    {
+                        "nama":"Bank sampah Hijau Selaras Mandiri",
+                        "kordinat":[106.855617, -6.154256]
+                    },
+                    {
+                        "nama":"Bank sampah Rosella, Rawa barat",
+                        "kordinat":[106.809644,-6.235653]
+                    },
+                    {
+                        "nama":"Bank sampah setiabudi",
+                        "kordinat":[106.829169,-6.209990]
+                    },
+                ]
+            }
+            data.fitur.forEach((hasil)=>{
+            // console.log(hasil)
+            var el = document.createElement("div");
+            el.id = "marker";
+            var popup = new mapboxgl.Popup({offset:25}).setText(hasil.nama)
+            new mapboxgl.Marker(el).setLngLat(hasil.kordinat).setPopup(popup).addTo(map)
+            // new mapboxgl.Popup().setLngLat(hasil.kordinat).setHTML(hasil.nama).addTo(map)
+            })
+        // })
+        // for(let i=0;i<loc.length;i++){
+        //     // console.log(loc[i])
+        //     let latLng = new mapboxgl.LngLat(loc[i][1],loc[i][2])
+        //     popup.setText(
+        //         loc[i][0]
+        //     )
+        //     marker.setLngLat(latLng).setPopup(popup).addTo(map)
+        // }
+    </script>
+  </body>
+</html>
