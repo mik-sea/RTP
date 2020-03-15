@@ -1,0 +1,33 @@
+.organik1 {
+    background-color: #edcf0c;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    box-sizing: border-box;
+    margin-top: 16px;
+    font-size: smaller;
+    margin: 0;
+}
+
+.wrn {
+    background-color: #edcf0c;
+    color: white;
+}
+
+.radius_green{
+    border-radius: 7px 7px 0 0;
+    color: white;
+    padding-bottom: 8px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav-bar {
+    background-color:#edcf0c;
+    top: 0;
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
