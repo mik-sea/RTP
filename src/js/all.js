@@ -32,7 +32,7 @@ function prize_info(title,isi){
             };
             $.ajax(settings).done(function (response) {
                 if(response == "Email tidak ada"){
-                    alert_info('Email tidak ada',`${response}`,'prize-page.html')
+                    alert_info('Email tidak ada',`${response}`,'account-page.html')
                 }else if(response == "Point kamu kurang"){
                     alert_info('Point Kurang',`${response}`,'prize-page.html')
                 }else{
