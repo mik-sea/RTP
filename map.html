@@ -49,42 +49,52 @@
                 "fitur":[
                     {
                         "nama":"Bank Sampah Wijaya Kususma",
+                        "description":"Jl. Cik Ditiro II 9, RT.1/RW.2, Gondangdia, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10350",
                         "kordinat":[106.7981152,-6.2488016]
                     },
                     {
                         "nama":"Bank Sampah Bersenyum",
+                        "description":"RT.8/RW.3, Petamburan, Tanah Abang, Central Jakarta City, Jakarta",
                         "kordinat":[106.8058267,-6.1922506]
                     },
                     {
                         "nama":"bank sampah makmur RW.5",
+                        "description":"RT.7/RW.5, North Cipete, Kebayoran Baru, South Jakarta City, Jakarta 12140",
                         "kordinat":[106.797199,-6.262197]
                     },
                     {
                         "nama":"Bank sampah Kirai Mandiri",
+                        "description":"Blok Dwi Raya, Jl. Damai Raya Blok Dwi Raya No.29, RT.12/RW.1, Cipete Utara, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12150",
                         "kordinat":[106.798556,-6.258941]
                     },
                     {
                         "nama":"Bank sampah Saraswati",
+                        "description":"Jl. Saraswati 1-2, RT.7/RW.7, Cipete Utara, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12150",
                         "kordinat":[106.806207,-6.263153]
                     },
                     {
                         "nama":"Bank sampah SAHABAT",
+                        "description":"RT.4/RW.7, North Gandaria, Kebayoran Baru, South Jakarta City, Jakarta",
                         "kordinat":[106.795712,-6.263404]
                     },
                     {
                         "nama":"Bank sampah Induk Gesit",
+                        "description":"Jl. Menteng Pulo, Menteng Dalam, Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12960",
                         "kordinat":[106.838394,-6.222236]
                     },
                     {
                         "nama":"Bank sampah Hijau Selaras Mandiri",
+                        "description":"Jl. Komp. Angkasa Pura 13, RT.14/RW.11, Kb. Kosong, Kec. Kemayoran, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10630",
                         "kordinat":[106.855617, -6.154256]
                     },
                     {
                         "nama":"Bank sampah Rosella, Rawa barat",
+                        "description":"Jl. Citayam II No.3, Rw. Bar., Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12180",
                         "kordinat":[106.809644,-6.235653]
                     },
                     {
                         "nama":"Bank sampah setiabudi",
+                        "description":"Jl. Setia Budi Selatan, RT.5/RW.2, Kuningan, Setia Budi, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920",
                         "kordinat":[106.829169,-6.209990]
                     },
                 ]
@@ -93,7 +103,7 @@
             // console.log(hasil)
             var el = document.createElement("div");
             el.id = "marker";
-            var popup = new mapboxgl.Popup({offset:25}).setText(hasil.nama)
+            var popup = new mapboxgl.Popup({offset:25}).setHTML('<a href='+`http://www.google.com/maps/place/${hasil.kordinat[1]},${hasil.kordinat[0]}>`+hasil.nama +"<br>"+ hasil.description+"</a>")
             new mapboxgl.Marker(el).setLngLat(hasil.kordinat).setPopup(popup).addTo(map)
             // new mapboxgl.Popup().setLngLat(hasil.kordinat).setHTML(hasil.nama).addTo(map)
             })
